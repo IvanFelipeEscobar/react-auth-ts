@@ -1,13 +1,14 @@
 
 import './App.css'
 import Navbar from './components/Navbar'
+import Landing from './pages/Landing'
 
 function App() {
 
   return (
     <>
     <Navbar/>
-     <div className="hello">Hello World</div>
+     <Landing />
     </>
   )
 }
