@@ -1,9 +1,9 @@
 
 import './App.css'
 import LoginButton from './components/LoginButton'
-import LogoutButton from './components/LogoutButton'
+// import LogoutButton from './components/LogoutButton'
 import Navbar from './components/Navbar'
-import Profile from './components/Profile'
+// import Profile from './components/Profile'
 import Landing from './pages/Landing'
 
 function App() {
@@ -13,8 +13,6 @@ function App() {
     <Navbar/>
      <Landing />
      <LoginButton/>
-     <LogoutButton/>
-     <Profile/>
     </>
   )
 }
