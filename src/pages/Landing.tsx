@@ -1,7 +1,11 @@
-import { Container, Typography } from '@mui/material'
-import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
+import { Box, Container, Typography } from '@mui/material'
+import LoginButton from '../components/LoginButton';
+import LogoutButton from '../components/LogoutButton';
 
 export default function Landing() {
+
+  const { user, isAuthenticated } = useAuth0();
   return (
     <>
     <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
@@ -18,8 +22,25 @@ export default function Landing() {
         The purpose of this application is to practice authentication using Oauth2 and the google api. It&apos;s built with default MUI components with little
         customization.
       </Typography>
-    </Container></>
+    </Container>
+    { isAuthenticated && user
 
-    
+    ? <Container maxWidth="sm">
+        <Box sx={{ bgcolor: '#cfe8fc', height: '40vh'}}>
+        <Typography variant="h2" gutterBottom align='center'>
+        {user.name}
+      </Typography>
+      <Typography variant="h3" gutterBottom align='center'>
+        {user.email}
+      </Typography>
+      <Typography gutterBottom align='center'>
+        <LogoutButton/>
+      </Typography>
+          </Box> 
+      </Container>
+      :
+      <LoginButton/>
+}
+      </>
   )
 }
