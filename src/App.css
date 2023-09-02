@@ -2,20 +2,28 @@
   box-sizing: border-box;
 
 }
-
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-card {
+  height: 50vh;
+  border-radius: 11px;
+  max-width: 850px;
+  background: rgba(3, 48, 63, 0.241);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-
-
+.flexy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  font-size: 3rem;
+}
+.profile-card img {
+  height: 16rem;
+  border-radius: 35px;
+  
+}
 .card {
   padding: 2em;
 }
