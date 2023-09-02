@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Box, Container, Typography } from '@mui/material'
+import {  Container, Typography } from '@mui/material'
 import LoginButton from '../components/LoginButton';
-import LogoutButton from '../components/LogoutButton';
+import ProfileCard from '../components/ProfileCard';
 
 export default function Landing() {
 
@@ -25,18 +25,8 @@ export default function Landing() {
     </Container>
     { isAuthenticated && user
 
-    ? <Container maxWidth="sm">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '40vh'}}>
-        <Typography variant="h2" gutterBottom align='center'>
-        {user.name}
-      </Typography>
-      <Typography variant="h3" gutterBottom align='center'>
-        {user.email}
-      </Typography>
-      <Typography gutterBottom align='center'>
-        <LogoutButton/>
-      </Typography>
-          </Box> 
+    ? <Container maxWidth="md">
+     <ProfileCard user={user}/>
       </Container>
       :
       <LoginButton/>
